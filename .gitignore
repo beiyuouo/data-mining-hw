@@ -1,0 +1,19 @@
+# visual studio code
+.vscode/
+.idea/
+
+# python
+venv/
+virtualenv/
+__pycache__/
+
+# misc
+.DS_Store
+
+# results
+*.doc
+*.docx
+
+# notebook checkpoints
+.ipynb_checkpoints
+
