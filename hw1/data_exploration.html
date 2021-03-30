@@ -13088,9 +13088,9 @@ div#notebook {
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;result&#39;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_palette</span><span class="p">(</span><span class="s2">&quot;pastel&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;simhei&#39;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;result&#39;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># 创建输出文件夹</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_palette</span><span class="p">(</span><span class="s2">&quot;pastel&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>  <span class="c1"># 修改配色方案</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;simhei&#39;</span>  <span class="c1"># 设置字体</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.unicode_minus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
 
@@ -13105,7 +13105,7 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 读入新冠数据</span>
-<span class="n">covid_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;china_provincedata1.csv&#39;</span> <span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;gbk&#39;</span><span class="p">)</span>
+<span class="n">covid_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;china_provincedata1.csv&#39;</span> <span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;gbk&#39;</span><span class="p">)</span>  <span class="c1"># 包含中文，设置gbk编码</span>
 <span class="n">covid_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -14393,16 +14393,18 @@ Index([&#39;sepal_length&#39;, &#39;petal_length&#39;, &#39;petal_width&#39;], d
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 
-<span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">penalty</span><span class="o">=</span><span class="s1">&#39;l2&#39;</span><span class="p">,</span> <span class="n">dual</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">intercept_scaling</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s1">&#39;liblinear&#39;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;ovr&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">warm_start</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">penalty</span><span class="o">=</span><span class="s1">&#39;l2&#39;</span><span class="p">,</span> <span class="n">dual</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">intercept_scaling</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+                        <span class="n">class_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s1">&#39;liblinear&#39;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;ovr&#39;</span><span class="p">,</span> 
+                        <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">warm_start</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">province_df</span><span class="p">[</span><span class="s1">&#39;confirmedCount&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,)</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">lr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">lr</span><span class="o">.</span><span class="n">coef_</span>
+<span class="n">lr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="c1"># X, y</span>
 </pre></div>
 
@@ -14416,71 +14418,13 @@ Index([&#39;sepal_length&#39;, &#39;petal_length&#39;, &#39;petal_width&#39;], d
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(0.21604938271604937,
- array([[-9.19715231e-01],
-        [-6.46749446e-01],
-        [-4.96897991e-01],
-        [-4.05276432e-01],
-        [-3.43934225e-01],
-        [-3.00092943e-01],
-        [-2.67066762e-01],
-        [-2.41242789e-01],
-        [-2.20444249e-01],
-        [-2.03300119e-01],
-        [-1.89070958e-01],
-        [-1.76615062e-01],
-        [-1.65997586e-01],
-        [-1.56700909e-01],
-        [-1.48658460e-01],
-        [-1.41251994e-01],
-        [-1.34728081e-01],
-        [-1.28837565e-01],
-        [-1.23507877e-01],
-        [-1.18646140e-01],
-        [-1.14192894e-01],
-        [-1.10098008e-01],
-        [-1.06318341e-01],
-        [-1.02817564e-01],
-        [-9.95647982e-02],
-        [-9.65343133e-02],
-        [-9.37021666e-02],
-        [-9.10492793e-02],
-        [-8.85650670e-02],
-        [-8.62223266e-02],
-        [-8.40139812e-02],
-        [-5.71762252e-02],
-        [-3.71645489e-02],
-        [-2.66639860e-02],
-        [-5.92784156e-02],
-        [-2.56355768e-02],
-        [-2.94369969e-02],
-        [-5.16044885e-02],
-        [-5.08711892e-02],
-        [-5.01615003e-02],
-        [-4.94739908e-02],
-        [-4.88078422e-02],
-        [-3.20947630e-02],
-        [-4.69172162e-02],
-        [-3.06733665e-02],
-        [-4.51738520e-02],
-        [-2.93425352e-02],
-        [-4.35572027e-02],
-        [-2.80890546e-02],
-        [-4.20524057e-02],
-        [-4.15734141e-02],
-        [-4.11050056e-02],
-        [-1.99624881e-02],
-        [-1.08138448e-02],
-        [ 7.56609897e-04],
-        [ 1.31564135e-02],
-        [-2.51146627e-02],
-        [ 3.99034528e-02]]))</pre>
+<pre>0.21604938271604937</pre>
 </div>
 
 </div>
