@@ -13,3 +13,7 @@
 ## 作业三： 分类数据挖掘
 
 [ [link](https://github.com/beiyuouo/data-mining-hw/tree/main/hw3) ] [ [code](https://beiyuouo.github.io/data-mining-hw/hw3/classification) ]
+
+## 作业四： 分类数据挖掘2
+
+[ [link](https://github.com/beiyuouo/data-mining-hw/tree/main/hw4) ] [ [code](https://beiyuouo.github.io/data-mining-hw/hw4/classificationv2) ]
