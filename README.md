@@ -21,3 +21,7 @@
 ## 作业五： 关联规则挖掘
 
 [ [link](https://github.com/beiyuouo/data-mining-hw/tree/main/hw5) ] [ [code](https://beiyuouo.github.io/data-mining-hw/hw5/association_rule_mining) ]
+
+## 作业六： 聚类
+
+[ [link](https://github.com/beiyuouo/data-mining-hw/tree/main/hw6) ] [ [code](https://beiyuouo.github.io/data-mining-hw/hw6/clustering) ]
